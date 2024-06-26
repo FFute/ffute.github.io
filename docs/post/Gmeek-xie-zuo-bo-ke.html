@@ -72,7 +72,9 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     <div id="content">
 <div class="markdown-body" id="postBody"><p>使用Gmeek写作博客，在Issuse中写作。<br>
 尝试<br>
-<a target="_blank" rel="noopener noreferrer" href="https://github.com/FFute/ffute.github.io/assets/8198810/daedbb9d-9c4b-4947-9ca1-50eb123b0c6d"><img src="https://github.com/FFute/ffute.github.io/assets/8198810/daedbb9d-9c4b-4947-9ca1-50eb123b0c6d" alt="Screenshot_20231110_001737_com aidlux" style="max-width: 100%;"></a></p></div>
+<a target="_blank" rel="noopener noreferrer" href="https://github.com/FFute/ffute.github.io/assets/8198810/daedbb9d-9c4b-4947-9ca1-50eb123b0c6d"><img src="https://github.com/FFute/ffute.github.io/assets/8198810/daedbb9d-9c4b-4947-9ca1-50eb123b0c6d" alt="Screenshot_20231110_001737_com aidlux" style="max-width: 100%;"></a></p>
+<hr>
+<p>更新内容</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
 <div class="comments" id="comments"></div>
@@ -130,7 +132,11 @@ console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n\n","padding:5p
 <script>
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
-
+cmButton=document.getElementById("cmButton");
+    span=document.createElement("span");
+    span.setAttribute("class","Counter");
+    span.innerHTML="1";
+    cmButton.appendChild(span);
 function openComments(){
     cm=document.getElementById("comments");
     cmButton=document.getElementById("cmButton");
