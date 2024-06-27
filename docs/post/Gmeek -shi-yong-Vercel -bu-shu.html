@@ -9,9 +9,13 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="Github Pages 要求必须使用公开仓库，如果要使用私有仓库，可以使用vercel部署。">
+<meta name="description" content="
+
+Github Pages 要求必须使用公开仓库，如果要使用私有仓库，可以使用vercel部署。">
 <meta property="og:title" content="Gmeek 使用Vercel 部署">
-<meta property="og:description" content="Github Pages 要求必须使用公开仓库，如果要使用私有仓库，可以使用vercel部署。">
+<meta property="og:description" content="
+
+Github Pages 要求必须使用公开仓库，如果要使用私有仓库，可以使用vercel部署。">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://gmeek.vercel.app/post/Gmeek%20-shi-yong-Vercel%20-bu-shu.html">
 <meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
@@ -40,7 +44,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     .postTitle{font-size:24px;}
 }
 </style>
-
+<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}</style><style>.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}</style>
 
 
 
@@ -71,6 +75,12 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
     <div id="content">
 <div class="markdown-body" id="postBody"><p>Github Pages 要求必须使用公开仓库，如果要使用私有仓库，可以使用vercel部署。</p>
+<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>使用本文的部署方式，存在两个问题：</p>
+<ol>
+<li>Issue中上传的图片，因为是github的防盗链地址，无法正常显示（可以通过图床解决，但脱离了Gmeek简单的初衷）。</li>
+<li>因为私有仓的原因，评论功能无法正常使用。</li>
+</ol>
+</div>
 <ol>
 <li>在vercel上导入Gmeek项目</li>
 <li>在vercel上修改网页静态文件路径为docs<br>
