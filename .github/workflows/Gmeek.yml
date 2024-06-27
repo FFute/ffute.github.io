@@ -17,9 +17,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v4
+      #- name: Setup Pages
+      #  id: pages
+      #  uses: actions/configure-pages@v4
 
       - name: Get config.json
         run: |
@@ -68,27 +68,22 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: 'docs/.'
-
-      - name: vercel
-        run: |
-          mkdir -p .vercel/output
-          cp -r docs/. .vercel/output/
           
-  deploy:
-    name: Deploy blog
-    runs-on: ubuntu-20.04
-    needs: build
-    permissions:
-      contents: write
-      pages: write
-      id-token: write
-    concurrency:
-      group: "pages"
-      cancel-in-progress: false
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+#  deploy:
+#    name: Deploy blog
+#    runs-on: ubuntu-20.04
+#    needs: build
+#    permissions:
+#      contents: write
+#      pages: write
+#      id-token: write
+#    concurrency:
+#      group: "pages"
+#      cancel-in-progress: false
+#    environment:
+#      name: github-pages
+#      url: ${{ steps.deployment.outputs.page_url }}
+#    steps:
+#      - name: Deploy to GitHub Pages
+#        id: deployment
+#        uses: actions/deploy-pages@v4
