@@ -9,13 +9,13 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="使用Gmeek写作博客，在Issuse中写作。">
-<meta property="og:title" content="Gmeek写作博客">
-<meta property="og:description" content="使用Gmeek写作博客，在Issuse中写作。">
+<meta name="description" content="Github Pages 要求必须使用公开仓库，如果要使用私有仓库，可以使用vercel部署。">
+<meta property="og:title" content="Gmeek 使用Vercel 部署">
+<meta property="og:description" content="Github Pages 要求必须使用公开仓库，如果要使用私有仓库，可以使用vercel部署。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://FFute.github.io/gmeek/post/Gmeek-xie-zuo-bo-ke.html">
+<meta property="og:url" content="https://FFute.github.io/gmeek/post/Gmeek%20-shi-yong-Vercel%20-bu-shu.html">
 <meta property="og:image" content="https://github.githubassets.com/favicons/favicon.svg">
-<title>Gmeek写作博客</title>
+<title>Gmeek 使用Vercel 部署</title>
 
 
 </head>
@@ -46,7 +46,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <body>
     <div id="header">
-<h1 class="postTitle">Gmeek写作博客</h1>
+<h1 class="postTitle">Gmeek 使用Vercel 部署</h1>
 <div class="title-right">
     <a href="https://FFute.github.io/gmeek" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
@@ -54,7 +54,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
         </svg>
     </a>
     
-    <a href="https://github.com/FFute/gmeek/issues/1" target="_blank" class="btn btn-invisible circle" title="Issue">
+    <a href="https://github.com/FFute/gmeek/issues/2" target="_blank" class="btn btn-invisible circle" title="Issue">
         <svg class="octicon" width="16" height="16">
             <path id="pathIssue" fill-rule="evenodd"></path>
         </svg>
@@ -70,12 +70,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>使用Gmeek写作博客，在Issuse中写作。<br>
-尝试<br>
-<a target="_blank" rel="noopener noreferrer" href="https://github.com/FFute/ffute.github.io/assets/8198810/daedbb9d-9c4b-4947-9ca1-50eb123b0c6d"><img src="https://github.com/FFute/ffute.github.io/assets/8198810/daedbb9d-9c4b-4947-9ca1-50eb123b0c6d" alt="Screenshot_20231110_001737_com aidlux" style="max-width: 100%;"></a></p>
-<hr>
-<p>更新内容<br>
-<iframe frameborder="0" border="1" marginwidth="0" marginheight="0" width=333 height=77 src="//music.163.com/outchain/player?type=2&id=33166539&auto=1&height=66"> </iframe></p></div>
+<div class="markdown-body" id="postBody"><p>Github Pages 要求必须使用公开仓库，如果要使用私有仓库，可以使用vercel部署</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
 <div class="comments" id="comments"></div>
@@ -133,11 +128,7 @@ console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n\n","padding:5p
 <script>
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
-cmButton=document.getElementById("cmButton");
-    span=document.createElement("span");
-    span.setAttribute("class","Counter");
-    span.innerHTML="1";
-    cmButton.appendChild(span);
+
 function openComments(){
     cm=document.getElementById("comments");
     cmButton=document.getElementById("cmButton");

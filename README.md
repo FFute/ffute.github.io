@@ -1,6 +1,6 @@
-# FFute :link: https://ffute.github.io 
-### :page_facing_up: [1](https://ffute.github.io/tag.html) 
+# FFute :link: https://FFute.github.io/gmeek 
+### :page_facing_up: [2](https://FFute.github.io/gmeek/tag.html) 
 ### :speech_balloon: 1 
-### :hibiscus: 361 
-### :alarm_clock: 2024-06-26 21:32:32 
+### :hibiscus: 407 
+### :alarm_clock: 2024-06-27 11:34:49 
 ### Powered by :heart: [Gmeek](https://github.com/Meekdai/Gmeek)
