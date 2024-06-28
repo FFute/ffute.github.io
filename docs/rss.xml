@@ -1,4 +1,23 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>FFute</title><link>https://blog.ibot.fun</link><description>人生是一次巨大的均值回归</description><copyright>FFute</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/FFute/ffute.github.io/assets/8198810/edf25dfa-ae47-4039-abda-1a41b7c5128b</url><title>avatar</title><link>https://blog.ibot.fun</link></image><lastBuildDate>Thu, 27 Jun 2024 13:07:40 +0000</lastBuildDate><managingEditor>FFute</managingEditor><ttl>60</ttl><webMaster>FFute</webMaster><item><title>Gmeek使用Vercel部署</title><link>https://blog.ibot.fun/post/Gmeek-shi-yong-Vercel-bu-shu.html</link><description>&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>FFute</title><link>https://blog.ibot.fun</link><description>人生是一次巨大的均值回归</description><copyright>FFute</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/FFute/ffute.github.io/assets/8198810/edf25dfa-ae47-4039-abda-1a41b7c5128b</url><title>avatar</title><link>https://blog.ibot.fun</link></image><lastBuildDate>Fri, 28 Jun 2024 11:21:31 +0000</lastBuildDate><managingEditor>FFute</managingEditor><ttl>60</ttl><webMaster>FFute</webMaster><item><title>Mr.Sen</title><link>https://blog.ibot.fun/post/Mr.Sen.html</link><description>I met Mr.Sen in such a lonely Night.&#13;
+&#13;
+At the middle street in the midnight.&#13;
+&#13;
+I saw him passing By.&#13;
+&#13;
+And I ‘m sure that He was shot me with his eyes.&#13;
+&#13;
+But He is just passing By.&#13;
+&#13;
+Not I have a light last.&#13;
+&#13;
+I just turn my head around .&#13;
+&#13;
+Only saw his shadowing back.&#13;
+&#13;
+&#13;
+&#13;
+&lt;!-- ##{'timestamp':1310279100}## --&gt;&#13;
+。</description><guid isPermaLink="true">https://blog.ibot.fun/post/Mr.Sen.html</guid><pubDate>Fri, 28 Jun 2024 11:21:06 +0000</pubDate></item><item><title>Gmeek使用Vercel部署</title><link>https://blog.ibot.fun/post/Gmeek-shi-yong-Vercel-bu-shu.html</link><description>&#13;
 &#13;
 Github Pages 要求必须使用公开仓库，如果要使用私有仓库，可以使用vercel部署。</description><guid isPermaLink="true">https://blog.ibot.fun/post/Gmeek-shi-yong-Vercel-bu-shu.html</guid><pubDate>Thu, 27 Jun 2024 03:30:55 +0000</pubDate></item><item><title>Gmeek写作博客</title><link>https://blog.ibot.fun/post/Gmeek-xie-zuo-bo-ke.html</link><description>使用Gmeek写作博客，在Issuse中写作。</description><guid isPermaLink="true">https://blog.ibot.fun/post/Gmeek-xie-zuo-bo-ke.html</guid><pubDate>Wed, 26 Jun 2024 12:16:24 +0000</pubDate></item></channel></rss>
