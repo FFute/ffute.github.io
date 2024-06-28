@@ -1,5 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>FFute</title><link>https://blog.ibot.fun</link><description>人生是一次巨大的均值回归</description><copyright>FFute</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/FFute/ffute.github.io/assets/8198810/edf25dfa-ae47-4039-abda-1a41b7c5128b</url><title>avatar</title><link>https://blog.ibot.fun</link></image><lastBuildDate>Fri, 28 Jun 2024 11:25:53 +0000</lastBuildDate><managingEditor>FFute</managingEditor><ttl>60</ttl><webMaster>FFute</webMaster><item><title>杨林那个肥酒</title><link>https://blog.ibot.fun/post/yang-lin-na-ge-fei-jiu.html</link><description>今天和哥哥一起走了很多路。</description><guid isPermaLink="true">https://blog.ibot.fun/post/yang-lin-na-ge-fei-jiu.html</guid><pubDate>Fri, 28 Jun 2024 11:22:14 +0000</pubDate></item><item><title>Mr.Sen</title><link>https://blog.ibot.fun/post/Mr.Sen.html</link><description>I met Mr.Sen in such a lonely Night.&#13;
+<rss xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" version="2.0"><channel><title>FFute</title><link>https://blog.ibot.fun</link><description>人生是一次巨大的均值回归</description><copyright>FFute</copyright><docs>http://www.rssboard.org/rss-specification</docs><generator>python-feedgen</generator><image><url>https://github.com/FFute/ffute.github.io/assets/8198810/edf25dfa-ae47-4039-abda-1a41b7c5128b</url><title>avatar</title><link>https://blog.ibot.fun</link></image><lastBuildDate>Fri, 28 Jun 2024 11:26:59 +0000</lastBuildDate><managingEditor>FFute</managingEditor><ttl>60</ttl><webMaster>FFute</webMaster><item><title>jekyll-theme-chirpy配置Google Analytics</title><link>https://blog.ibot.fun/post/jekyll-theme-chirpy-pei-zhi-Google%20Analytics.html</link><description>jekyll-theme-chirpy 主题本身已经内置了Google Analytics插件，使用时候只需在`_config.yml`中修改如下配置&#13;
+&#13;
+```yaml&#13;
+google_analytics:&#13;
+  id: 'G-XXX' # fill in your Google Analytics ID&#13;
+```&#13;
+&#13;
+其中G-XXX替换为你自己的Google track id&#13;
+&#13;
+但是实际部署后发现配置不生效，主题本身的文档中对这一块的说明也缺失。</description><guid isPermaLink="true">https://blog.ibot.fun/post/jekyll-theme-chirpy-pei-zhi-Google%20Analytics.html</guid><pubDate>Fri, 28 Jun 2024 11:26:33 +0000</pubDate></item><item><title>杨林那个肥酒</title><link>https://blog.ibot.fun/post/yang-lin-na-ge-fei-jiu.html</link><description>今天和哥哥一起走了很多路。</description><guid isPermaLink="true">https://blog.ibot.fun/post/yang-lin-na-ge-fei-jiu.html</guid><pubDate>Fri, 28 Jun 2024 11:22:14 +0000</pubDate></item><item><title>Mr.Sen</title><link>https://blog.ibot.fun/post/Mr.Sen.html</link><description>I met Mr.Sen in such a lonely Night.&#13;
 &#13;
 At the middle street in the midnight.&#13;
 &#13;
