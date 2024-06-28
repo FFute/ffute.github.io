@@ -9,17 +9,91 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="
+<meta name="description" content="直接使用官方的 Docker 镜像，做以下几个改动
 
-Github Pages 要求必须使用公开仓库，如果要使用私有仓库，可以使用vercel部署。">
-<meta property="og:title" content="Gmeek使用Vercel部署">
-<meta property="og:description" content="
+1. 配置端口映射，将内部端口映射到 443
+2. 创建一个存储卷，挂载到 Docker 内部的 workspace 目录
 
-Github Pages 要求必须使用公开仓库，如果要使用私有仓库，可以使用vercel部署。">
+    ```
+    fly volume create siyuan_data -r hkg -s 1
+    ```
+
+3. 由于官方镜像一定要指定 accesskey 才能启动，所以需要使用到 fly 的 experimental 特性，在 fly.toml 中指定 exec 启动参数，添加 docker 启动的命令行
+配置文件如下：
+
+    ```
+    app = 'app_name'
+    primary_region = 'hkg'
+    
+    [experimental]
+      cmd = ['--accessAuthCode=xxx']
+    
+    [build]
+      image = 'b3log/siyuan:latest'
+    
+    [mounts]
+      source = 'siyuan_data'
+      destination = '/home/siyuan/SiYuan'
+      processes = ['app']
+    
+    [http_service]
+      internal_port = 6806
+      force_https = true
+      auto_stop_machines = true
+      auto_start_machines = true
+      min_machines_running = 0
+      [http_service.concurrency]
+        type = 'requests'
+        hard_limit = 250
+        soft_limit = 200
+    ```
+
+4. 到这里 deploy 后就可以访问了。">
+<meta property="og:title" content="使用fly.io部署一个思源笔记">
+<meta property="og:description" content="直接使用官方的 Docker 镜像，做以下几个改动
+
+1. 配置端口映射，将内部端口映射到 443
+2. 创建一个存储卷，挂载到 Docker 内部的 workspace 目录
+
+    ```
+    fly volume create siyuan_data -r hkg -s 1
+    ```
+
+3. 由于官方镜像一定要指定 accesskey 才能启动，所以需要使用到 fly 的 experimental 特性，在 fly.toml 中指定 exec 启动参数，添加 docker 启动的命令行
+配置文件如下：
+
+    ```
+    app = 'app_name'
+    primary_region = 'hkg'
+    
+    [experimental]
+      cmd = ['--accessAuthCode=xxx']
+    
+    [build]
+      image = 'b3log/siyuan:latest'
+    
+    [mounts]
+      source = 'siyuan_data'
+      destination = '/home/siyuan/SiYuan'
+      processes = ['app']
+    
+    [http_service]
+      internal_port = 6806
+      force_https = true
+      auto_stop_machines = true
+      auto_start_machines = true
+      min_machines_running = 0
+      [http_service.concurrency]
+        type = 'requests'
+        hard_limit = 250
+        soft_limit = 200
+    ```
+
+4. 到这里 deploy 后就可以访问了。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://blog.ibot.fun/post/Gmeek-shi-yong-Vercel-bu-shu.html">
+<meta property="og:url" content="https://blog.ibot.fun/post/6.html">
 <meta property="og:image" content="https://github.com/FFute/ffute.github.io/assets/8198810/edf25dfa-ae47-4039-abda-1a41b7c5128b">
-<title>Gmeek使用Vercel部署</title>
+<title>使用fly.io部署一个思源笔记</title>
 
 
 </head>
@@ -44,13 +118,13 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
     .postTitle{font-size:24px;}
 }
 </style>
-<style>.markdown-alert{padding:0.5rem 1rem;margin-bottom:1rem;border-left:.25em solid var(--borderColor-default,var(--color-border-default));}.markdown-alert .markdown-alert-title {display:flex;font-weight:var(--base-text-weight-medium,500);align-items:center;line-height:1;}.markdown-alert>:first-child {margin-top:0;}.markdown-alert>:last-child {margin-bottom:0;}</style><style>.markdown-alert.markdown-alert-note {border-left-color:var(--borderColor-accent-emphasis, var(--color-accent-emphasis));background-color:var(--color-accent-subtle);}.markdown-alert.markdown-alert-note .markdown-alert-title {color: var(--fgColor-accent,var(--color-accent-fg));}</style>
+
 
 
 
 <body>
     <div id="header">
-<h1 class="postTitle">Gmeek使用Vercel部署</h1>
+<h1 class="postTitle">使用fly.io部署一个思源笔记</h1>
 <div class="title-right">
     <a href="https://blog.ibot.fun" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
@@ -68,23 +142,53 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>Github Pages 要求必须使用公开仓库，如果要使用私有仓库，可以使用vercel部署。</p>
-<div class="markdown-alert markdown-alert-note"><p class="markdown-alert-title"><svg class="octicon octicon-info mr-2" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8Zm8-6.5a6.5 6.5 0 1 0 0 13 6.5 6.5 0 0 0 0-13ZM6.5 7.75A.75.75 0 0 1 7.25 7h1a.75.75 0 0 1 .75.75v2.75h.25a.75.75 0 0 1 0 1.5h-2a.75.75 0 0 1 0-1.5h.25v-2h-.25a.75.75 0 0 1-.75-.75ZM8 6a1 1 0 1 1 0-2 1 1 0 0 1 0 2Z"></path></svg>Note</p><p>使用本文的部署方式，因为私仓的原因存在两个问题：</p>
+<div class="markdown-body" id="postBody"><p>直接使用官方的 Docker 镜像，做以下几个改动</p>
 <ol>
-<li>Issue中上传的图片，无法正常显示（可以通过图床解决，但脱离了Gmeek简单的初衷）。</li>
-<li>评论功能无法正常使用。</li>
+<li>
+<p>配置端口映射，将内部端口映射到 443</p>
+</li>
+<li>
+<p>创建一个存储卷，挂载到 Docker 内部的 workspace 目录</p>
+<pre class="notranslate"><code class="notranslate">fly volume create siyuan_data -r hkg -s 1
+</code></pre>
+</li>
+<li>
+<p>由于官方镜像一定要指定 accesskey 才能启动，所以需要使用到 fly 的 experimental 特性，在 fly.toml 中指定 exec 启动参数，添加 docker 启动的命令行<br>
+配置文件如下：</p>
+<pre class="notranslate"><code class="notranslate">app = "app_name"
+primary_region = "hkg"
+
+[experimental]
+  cmd = ["--accessAuthCode=xxx"]
+
+[build]
+  image = "b3log/siyuan:latest"
+
+[mounts]
+  source = "siyuan_data"
+  destination = "/home/siyuan/SiYuan"
+  processes = ["app"]
+
+[http_service]
+  internal_port = 6806
+  force_https = true
+  auto_stop_machines = true
+  auto_start_machines = true
+  min_machines_running = 0
+  [http_service.concurrency]
+    type = "requests"
+    hard_limit = 250
+    soft_limit = 200
+</code></pre>
+</li>
+<li>
+<p>到这里 deploy 后就可以访问了。</p>
+</li>
+<li>
+<p>为了数据安全性，启动后配置一个云端存储作为同步和备份，支持 s3, 可以继续薅 cloudflare r2 羊毛</p>
+</li>
 </ol>
 </div>
-<ol>
-<li>在vercel上导入Gmeek项目</li>
-<li>在vercel上修改网页静态文件路径为docs<br>
-<a target="_blank" rel="noopener noreferrer" href="https://github.com/FFute/gmeek/assets/8198810/13e8215a-9f2f-42fe-a168-9f9c48abad18"><img src="https://github.com/FFute/gmeek/assets/8198810/13e8215a-9f2f-42fe-a168-9f9c48abad18" alt="image" style="max-width: 100%;"></a></li>
-<li>修改Github Action, 去除对Pages的依赖操作<br>
-<a target="_blank" rel="noopener noreferrer" href="https://github.com/FFute/gmeek/assets/8198810/cead0e18-895c-4378-bdd1-3c020941e34a"><img src="https://github.com/FFute/gmeek/assets/8198810/cead0e18-895c-4378-bdd1-3c020941e34a" alt="image" style="max-width: 100%;"></a><br>
-<a target="_blank" rel="noopener noreferrer" href="https://github.com/FFute/gmeek/assets/8198810/ea415c69-509b-4762-ace4-3048cb00dbe5"><img src="https://github.com/FFute/gmeek/assets/8198810/ea415c69-509b-4762-ace4-3048cb00dbe5" alt="image" style="max-width: 100%;"></a></li>
-</ol>
-<p>操作完成后就可以把仓库转为私有，通过vercel部署和访问了。<br>
-正常写issue后，vercel也会自动发布更新。</p></div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
 <div class="comments" id="comments"></div>

@@ -9,50 +9,14 @@
         let theme = localStorage.getItem("meek_theme") || "light";
         document.documentElement.setAttribute("data-color-mode", theme);
     </script>
-<meta name="description" content="I met Mr.Sen in such a lonely Night.
-
-At the middle street in the midnight.
-
-I saw him passing By.
-
-And I ‘m sure that He was shot me with his eyes.
-
-But He is just passing By.
-
-Not I have a light last.
-
-I just turn my head around .
-
-Only saw his shadowing back.
-
-
-
-<!-- ##{'timestamp':1313167800}## -->。">
-<meta property="og:title" content="Mr.Sen">
-<meta property="og:description" content="I met Mr.Sen in such a lonely Night.
-
-At the middle street in the midnight.
-
-I saw him passing By.
-
-And I ‘m sure that He was shot me with his eyes.
-
-But He is just passing By.
-
-Not I have a light last.
-
-I just turn my head around .
-
-Only saw his shadowing back.
-
-
-
-<!-- ##{'timestamp':1313167800}## -->。">
+<meta name="description" content="由于众所周知的原因，中国大陆用户访问chirpy主题博客时会存在js和css等资源加载慢的问题。">
+<meta property="og:title" content="jekyll-theme-chirpy博客主题打开速度优化">
+<meta property="og:description" content="由于众所周知的原因，中国大陆用户访问chirpy主题博客时会存在js和css等资源加载慢的问题。">
 <meta property="og:type" content="article">
-<meta property="og:url" content="https://blog.ibot.fun/post/Mr.Sen.html">
+<meta property="og:url" content="https://blog.ibot.fun/post/7.html">
 <meta property="og:image" content="https://github.com/FFute/ffute.github.io/assets/8198810/edf25dfa-ae47-4039-abda-1a41b7c5128b">
-<title>Mr.Sen</title>
-
+<title>jekyll-theme-chirpy博客主题打开速度优化</title>
+<link href="//unpkg.com/@wooorm/starry-night@2.1.1/style/both.css" rel="stylesheet" />
 
 </head>
 <style>
@@ -82,7 +46,7 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 
 <body>
     <div id="header">
-<h1 class="postTitle">Mr.Sen</h1>
+<h1 class="postTitle">jekyll-theme-chirpy博客主题打开速度优化</h1>
 <div class="title-right">
     <a href="https://blog.ibot.fun" id="buttonHome" class="btn btn-invisible circle" title="首页">
         <svg class="octicon" width="16" height="16">
@@ -100,14 +64,41 @@ body{box-sizing: border-box;min-width: 200px;max-width: 900px;margin: 20px auto;
 </div>
 </div>
     <div id="content">
-<div class="markdown-body" id="postBody"><p>I met Mr.Sen in such a lonely Night.</p>
-<p>At the middle street in the midnight.</p>
-<p>I saw him passing By.</p>
-<p>And I ‘m sure that He was shot me with his eyes.</p>
-<p>But He is just passing By.</p>
-<p>Not I have a light last.</p>
-<p>I just turn my head around .</p>
-<p>Only saw his shadowing back.</p>
+<div class="markdown-body" id="postBody"><p>由于众所周知的原因，中国大陆用户访问chirpy主题博客时会存在js和css等资源加载慢的问题。</p>
+<p>查阅官方文档后，在不修改主题框架的情况下，可以通过配置进行优化，有两个方式：</p>
+<blockquote>
+<p>Customing Static Assets<br>
+Static assets configuration was introduced in version 5.1.0. The CDN of the static assets is defined by file _data/origin/cors.yml, and you can replace some of them according to the network conditions in the region where your website is published.<br>
+Also, if you’d like to self-host the static assets, please refer to the chirpy-static-assets.</p>
+</blockquote>
+<ol>
+<li>
+<p>修改加载CORS的CDN地址</p>
+<p>默认情况下，原主题默认使用的是jsdelivr的cdn进行js和css加速缓存，但是这个在国内不好用。</p>
+<p>相关配置在源代码的 <code class="notranslate">_data/origin/cors.yml </code> 文件中，找到相应的库文件地址，替换为国内的CDN地址即可。以jquery为例：</p>
+<div class="highlight highlight-source-diff"><pre class="notranslate">jquery:
+<span class="pl-md"><span class="pl-md">-</span> js: https://fastly.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js</span>
+<span class="pl-mi1"><span class="pl-mi1">+</span> js: https://cdn.staticfile.org/jquery/3.7.1/jquery.min.js</span></pre></div>
+</li>
+<li>
+<p>self-host部署<br>
+主题作者也提供了配置为self-host对应的的<a href="https://github.com/cotes2020/chirpy-static-assets">asset库</a>和相应的配置方法。<br>
+如果你本身是利用CDN来部署你的博客，而且你的CDN提供商访问速度不错的话，推荐使用这种方式。</p>
+<p>修改 <code class="notranslate">_config.yml</code> 把self_host修改为 <em>true</em>:</p>
+<div class="highlight highlight-source-yaml"><pre class="notranslate"><span class="pl-c"><span class="pl-c">#</span> _config.yml</span>
+<span class="pl-ent">assets</span>:
+  <span class="pl-ent">self_host</span>:
+    <span class="pl-ent">enabled</span>: <span class="pl-c1">true</span></pre></div>
+<p>然后修改github的action配置 <code class="notranslate">.github/workflows/pages-deploy.yml</code>，把submodules打开 :</p>
+<div class="highlight highlight-source-diff"><pre class="notranslate">steps:
+  - name: Checkout
+    uses: actions/checkout@v2
+    with:
+<span class="pl-mi1"><span class="pl-mi1">+</span>     submodules: true</span></pre></div>
+</li>
+</ol>
+<p>完成！</p>
+<p>因为有一个库文件在国内cdn没有同步，我现在偷懒使用self_host的方式部署，使用这种方式并且配合vercel部署，基本可以秒开了，速度目前基本满足要求。</p>
 </div>
 <div style="font-size:small;margin-top:8px;float:right;"></div>
 <button class="btn btn-block" type="button" onclick="openComments()" id="cmButton">评论</button>
