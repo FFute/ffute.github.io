@@ -78,7 +78,7 @@ Also, if you’d like to self-host the static assets, please refer to the chirpy
 <p>相关配置在源代码的 <code class="notranslate">_data/origin/cors.yml </code> 文件中，找到相应的库文件地址，替换为国内的CDN地址即可。以jquery为例：</p>
 <div class="highlight highlight-source-diff"><pre class="notranslate">jquery:
 <span class="pl-md"><span class="pl-md">-</span> js: https://fastly.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js</span>
-<span class="pl-mi1"><span class="pl-mi1">+</span> js: https://cdn.staticfile.org/jquery/3.7.1/jquery.min.js</span></pre></div>
+<span class="pl-mi1"><span class="pl-mi1">+</span> js: https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/jquery/3.7.1/jquery.min.js</span></pre></div>
 </li>
 <li>
 <p>self-host部署<br>
@@ -157,7 +157,11 @@ console.log("\n %c Gmeek last https://github.com/Meekdai/Gmeek \n\n","padding:5p
 <script>
 document.getElementById("pathHome").setAttribute("d",IconList["home"]);
 document.getElementById("pathIssue").setAttribute("d",IconList["github"]);
-
+cmButton=document.getElementById("cmButton");
+    span=document.createElement("span");
+    span.setAttribute("class","Counter");
+    span.innerHTML="1";
+    cmButton.appendChild(span);
 function openComments(){
     cm=document.getElementById("comments");
     cmButton=document.getElementById("cmButton");

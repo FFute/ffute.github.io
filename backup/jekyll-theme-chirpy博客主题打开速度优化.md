@@ -15,7 +15,7 @@ Also, if you’d like to self-host the static assets, please refer to the chirpy
     ```diff
     jquery:
     - js: https://fastly.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js
-    + js: https://cdn.staticfile.org/jquery/3.7.1/jquery.min.js
+    + js: https://mirrors.sustech.edu.cn/cdnjs/ajax/libs/jquery/3.7.1/jquery.min.js
     ```
 2. self-host部署
     主题作者也提供了配置为self-host对应的的[asset库](https://github.com/cotes2020/chirpy-static-assets)和相应的配置方法。  
