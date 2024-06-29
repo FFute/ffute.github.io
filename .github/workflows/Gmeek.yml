@@ -17,10 +17,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      # - name: Setup Pages
-      #   id: pages
-      #   uses: actions/configure-pages@v4
-
       - name: Get config.json
         run: |
           echo "====== check config.josn file ======"
