@@ -5,4 +5,5 @@
 
 ---
 更新内容
-![image (3)](https://github.com/FFute/ffute.github.io/assets/8198810/5e6e8f7e-cd55-4b76-b6b6-24d254819403)
+![img](https://github.com/FFute/ffute.github.io/assets/8198810/56967a9a-8a30-4131-b8bd-0b4c9e1c106e)
+
